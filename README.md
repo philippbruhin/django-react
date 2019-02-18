@@ -20,3 +20,13 @@ Start the project
 ```
 divio project up
 ```
+
+Shut it down
+```
+divio project stop
+```
+
+Check what Docker processes are running:
+```
+docker ps
+```
