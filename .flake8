@@ -1,0 +1,6 @@
+[flake8]
+exclude =
+    addons,
+    addons-dev,
+    manage.py,
+    settings.py
