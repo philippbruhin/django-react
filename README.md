@@ -1,5 +1,5 @@
 # Django Rest Framework with React
-Basic rest api tutorial with Django and React, hosted on Divio Dloud.
+Basic rest api tutorial with Django and React, hosted on Divio Cloud.
 
 ## Get started
 ToDo
