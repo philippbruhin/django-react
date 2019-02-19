@@ -16,4 +16,6 @@ aldryn_addons.settings.load(locals())
 
 INSTALLED_APPS.extend([
     # add your project specific apps here
+    'leads',
+    'rest_framework',
 ])
