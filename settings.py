@@ -18,4 +18,9 @@ INSTALLED_APPS.extend([
     # add your project specific apps here
     'leads',
     'rest_framework',
+    'knox',
 ])
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
