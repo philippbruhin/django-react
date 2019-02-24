@@ -26,6 +26,12 @@ Shut it down
 divio project stop
 ```
 
+Run a command in a specific container, such as:
+```
+docker-compose run --rm --service-ports web bash
+python manage.py runserver 0.0.0.0:80
+```
+
 Check what Docker processes are running:
 ```
 docker ps
