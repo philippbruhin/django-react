@@ -6,3 +6,4 @@ https://control.divio.com/api/v1/apps/serve/aldryn-sso/1.5.1/4e2eb564-fbf5-4d5f-
 flake8==3.7.6
 djangorestframework==3.9.1
 django-rest-knox==3.6.0
+django-cors-headers==2.4.0
