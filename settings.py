@@ -11,7 +11,6 @@ INSTALLED_ADDONS = [
 import aldryn_addons.settings
 aldryn_addons.settings.load(locals())
 
-
 # all django settings can be altered here
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
@@ -19,28 +18,11 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_ALLOW_ALL=True
 
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-disposition',
-    'content-type',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
+def to_settings(self, data, settings):
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000',
-    '127.0.0.1:3000'
-)
+    settings['MIDDLEWARE'].insert(0, 'corsheaders.middleware.CorsMiddleware', )
 
-
-MIDDLEWARE.insert(
-    MIDDLEWARE.index("django.middleware.common.CommonMiddleware") + 0,
-    "corsheaders.middleware.CorsMiddleware"
-)
+    return settings
 
 INSTALLED_APPS.extend([
     # add your project specific apps here
