@@ -17,10 +17,26 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL=True
+CORS_ALLOW_CREDENTIALS = True
 
 def to_settings(self, data, settings):
 
-    settings['MIDDLEWARE'].insert(0, 'corsheaders.middleware.CorsMiddleware', )
+    #settings['MIDDLEWARE'].insert(0, 'corsheaders.middleware.CorsMiddleware', )
+
+    settings['MIDDLEWARE'] = [
+        'corsheaders.middleware.CorsMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.locale.LocaleMiddleware',
+        'django.contrib.sites.middleware.CurrentSiteMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.security.SecurityMiddleware',
+    ]
 
     return settings
 
